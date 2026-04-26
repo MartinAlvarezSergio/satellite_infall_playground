@@ -1,0 +1,246 @@
+:root {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.45;
+  font-weight: 400;
+  color: #e5e2de;
+  background-color: #1b1c1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(130, 165, 255, 0.18), rgba(255, 255, 255, 0) 34%),
+    radial-gradient(circle at 85% 100%, rgba(120, 240, 200, 0.11), rgba(255, 255, 255, 0) 30%),
+    linear-gradient(180deg, #161922 0%, #090b11 100%);
+  color: #e5e2de;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+select {
+  width: 100%;
+  margin-top: 0.35rem;
+  background: rgba(245, 243, 238, 0.14);
+  color: #ece9e4;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 9px;
+  padding: 0.42rem 0.55rem;
+}
+
+select option {
+  background: #2d2f33;
+  color: #ece9e4;
+}
+
+button {
+  background: rgba(240, 238, 235, 0.16);
+  color: #f1efec;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 10px;
+  padding: 0.5rem 0.88rem;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+  backdrop-filter: blur(5px);
+}
+
+button:hover:not(:disabled) {
+  background: rgba(240, 238, 235, 0.24);
+  border-color: rgba(255, 255, 255, 0.38);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background: rgba(140, 140, 145, 0.18);
+  border-color: rgba(200, 200, 206, 0.2);
+  opacity: 0.7;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 0.4rem;
+}
+
+.app-shell {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 1.2rem 1.5rem 1.5rem;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.hero {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 3.6vw, 3rem);
+  line-height: 1.05;
+}
+
+.hero p:not(.eyebrow) {
+  max-width: 78rem;
+  color: #cbc8c3;
+}
+
+.eyebrow {
+  color: #82f0d0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.subtle {
+  color: #b7b4af;
+}
+
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(247, 245, 242, 0.08);
+  backdrop-filter: blur(6px);
+  padding: 1rem;
+}
+
+.modal {
+  display: grid;
+  gap: 1rem;
+}
+
+.gravity-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1rem;
+}
+
+.gravity-layout .galaxy-outflow-visual-column {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.gravity-layout .galaxy-outflow-density-plot canvas {
+  display: block;
+  max-width: 100%;
+}
+
+.panel {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+
+.panel label {
+  display: grid;
+}
+
+.slider-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem 0.8rem;
+}
+
+.control-span-2 {
+  grid-column: 1 / -1;
+}
+
+.control-section {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  padding: 0.7rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.gravity-layout details.control-section > summary {
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #d3cdc5;
+  list-style: none;
+}
+
+.gravity-layout details.control-section > summary::-webkit-details-marker {
+  display: none;
+}
+
+.checkbox {
+  display: flex !important;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.stats {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+  color: #d8d3cd;
+}
+
+.canvas-shell {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+}
+
+canvas {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1080px) {
+  .gravity-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .control-grid {
+    grid-template-columns: 1fr;
+  }
+}
