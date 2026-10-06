@@ -15,11 +15,6 @@ export function App(): JSX.Element {
 
   return (
     <div className="app-shell">
-      <header className="hero card">
-        <p className="eyebrow">Interactive dark matter halo simulation</p>
-        <h1>{applet.title}</h1>
-        <p>{applet.description}</p>
-      </header>
       <main className="modal card">{applet.render()}</main>
     </div>
   );

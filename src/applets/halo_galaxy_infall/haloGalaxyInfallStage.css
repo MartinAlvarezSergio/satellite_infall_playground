@@ -1,0 +1,54 @@
+/* Galaxy infall on the applet stage (scoped by AppletStage rootClassName="infall-stage"). */
+
+/* Slightly wider panel so labels like "Target m_gal_dm (M☉), 1e6–1e9" stay on one line. */
+@media (min-width: 761px) {
+  .infall-stage .stage-controls {
+    width: 256px;
+  }
+
+  /* Room for a four-digit time, so the panel doesn't jump as t passes 10, 100, 1000 Myr. */
+  .infall-stage .stage-readouts {
+    min-width: 224px;
+  }
+}
+
+/* Long values (N = … · m_eff = …) drop under their label instead of squeezing it into a column. */
+.infall-stage .stage-field-head {
+  flex-wrap: wrap;
+  row-gap: 0;
+}
+
+.infall-stage .stage-field-head strong {
+  margin-left: auto;
+}
+
+/* The format select's longest option would otherwise set the panel's minimum width and clip every row. */
+.infall-stage .stage-controls,
+.infall-stage .stage-section-body {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* "Cosmo-like stars (DM 4e7, stars 4e6)" is wider than the panel; let pills wrap. */
+:root .infall-stage .stage-controls .stage-pill {
+  white-space: normal;
+  text-align: left;
+}
+
+.infall-stage button[aria-label="Start recording"] svg {
+  color: #ff7a6b;
+}
+
+.infall-stage .infall-plots {
+  display: grid;
+  gap: 4px;
+}
+
+.infall-stage .infall-rec-error {
+  margin: 0;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(120, 40, 30, 0.3);
+  color: #ffb4a0;
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
